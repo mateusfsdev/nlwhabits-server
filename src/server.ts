@@ -1,1 +1,1 @@
-console.log('oi')
+import Fastify from 'fastify'
