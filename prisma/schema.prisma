@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+//prisma suporta varios db ...mongo, cockroach, sql...
+//model é usado como um nome generico ja que
+// no mongo usa colection o sql usa table e por ai vai  
+//@@map serve para renomear a tabela no caso aqui so pela regra de minuscula
+
+model Habit {
+  id        String   @id @default(uuid())
+  title     String
+  createdAt DateTime
+
+  @@map("habits")
+}
