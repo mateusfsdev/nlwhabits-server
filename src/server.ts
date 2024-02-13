@@ -5,6 +5,8 @@ import { PrismaClient } from '@prisma/client'
 const app = Fastify()
 const prisma = new PrismaClient()
 
+//configurando o cors para apenas o localhost acessar os dados do meu backend
+
 app.register(cors, {
   origin: ['http://localhost:8787']
 })
